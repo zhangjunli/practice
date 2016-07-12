@@ -9,6 +9,17 @@
 #import "ViewController.h"
 #import "GYNotificationCenter.h"
 
+/**
+
+ 载录线程理解
+ addObserver 在主线程中。postNotification 在分线程中调用。则addObserver绑定的方法，也将在分线程中执行。对于将在分线程中执行的UI操作，需要强制切换线程。如下：
+     dispatch_async(dispatch_get_main_queue(), ^{
+          NSLog(@"current thread = %@", [NSThread currentThread]);
+    });
+ iOS4，提供了带block的NSNotification,但移除时麻烦点，需要逐个删除注册的通知，未解决逐个删除的问题，第三方的
+GYNotificationCenter诞生了。
+*/
+
 
 @interface ViewController ()
 
