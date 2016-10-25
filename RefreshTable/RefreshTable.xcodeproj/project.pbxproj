@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0420ED531DBF61F500E0A502 /* CRMPageNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0420ED521DBF61F500E0A502 /* CRMPageNumberView.m */; };
 		04D849641D3632AB00DA3D0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D849631D3632AB00DA3D0C /* main.m */; };
 		04D849671D3632AB00DA3D0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D849661D3632AB00DA3D0C /* AppDelegate.m */; };
 		04D8496D1D3632AB00DA3D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D8496B1D3632AB00DA3D0C /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0420ED511DBF61F500E0A502 /* CRMPageNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMPageNumberView.h; sourceTree = "<group>"; };
+		0420ED521DBF61F500E0A502 /* CRMPageNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMPageNumberView.m; sourceTree = "<group>"; };
 		04D8495F1D3632AB00DA3D0C /* RefreshTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefreshTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D849631D3632AB00DA3D0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04D849651D3632AB00DA3D0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0420ED501DBF61F500E0A502 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				0420ED511DBF61F500E0A502 /* CRMPageNumberView.h */,
+				0420ED521DBF61F500E0A502 /* CRMPageNumberView.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		04D849561D3632AB00DA3D0C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 		04D849611D3632AB00DA3D0C /* RefreshTable */ = {
 			isa = PBXGroup;
 			children = (
+				0420ED501DBF61F500E0A502 /* Tool */,
 				04D849651D3632AB00DA3D0C /* AppDelegate.h */,
 				04D849661D3632AB00DA3D0C /* AppDelegate.m */,
 				04D849791D36348900DA3D0C /* CustomTableViewController.h */,
@@ -151,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D8497B1D36348900DA3D0C /* CustomTableViewController.m in Sources */,
+				0420ED531DBF61F500E0A502 /* CRMPageNumberView.m in Sources */,
 				04D849671D3632AB00DA3D0C /* AppDelegate.m in Sources */,
 				04D849641D3632AB00DA3D0C /* main.m in Sources */,
 			);
@@ -303,6 +317,7 @@
 				04D849781D3632AB00DA3D0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
