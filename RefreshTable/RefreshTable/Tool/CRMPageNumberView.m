@@ -78,14 +78,14 @@
 
     if (!_currentPage) {
         CGFloat margin = 5;
-        CGFloat originY = self.frame.size.height/8.0;
+        CGFloat originY = self.frame.size.height*1.5/8.0;
         CGFloat height = self.frame.size.height/4.0;
         CGFloat width = (self.frame.size.width - margin*2);
         _currentPage = [[UILabel alloc] initWithFrame:CGRectMake(margin, originY, width, height)];
         _currentPage.text = @"5";
         _currentPage.textColor = [UIColor blackColor];
         _currentPage.textAlignment = NSTextAlignmentCenter;
-        _currentPage.font = [UIFont systemFontOfSize:14.0];
+        _currentPage.font = [UIFont systemFontOfSize:11.0];
         _currentPage.adjustsFontSizeToFitWidth = YES;
     }
     return _currentPage;
@@ -108,14 +108,14 @@
 
     if (!_totalPage) {
         CGFloat margin = 5;
-        CGFloat originY = self.frame.size.height * 5.0/8.0 ;
+        CGFloat originY = self.frame.size.height * 4.5/8.0 ;
         CGFloat height = self.frame.size.height/4.0;
         CGFloat width = (self.frame.size.width - margin*2);
         _totalPage = [[UILabel alloc] initWithFrame:CGRectMake(margin, originY, width, height)];
         _totalPage.text = @"40";
         _totalPage.textColor = [UIColor blackColor];
         _totalPage.textAlignment = NSTextAlignmentCenter;
-        _totalPage.font = [UIFont systemFontOfSize:14.0];
+        _totalPage.font = [UIFont systemFontOfSize:11.0];
         _totalPage.adjustsFontSizeToFitWidth = YES;
     }
     return _totalPage;

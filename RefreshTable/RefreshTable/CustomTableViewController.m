@@ -181,15 +181,18 @@
     }else {
         [self.pageView removeFromSuperview];
     }
-    //当手离开时，显示 置顶图片
-    if (!scrollView.isTracking) {
-        self.pageView.isTopImageHidden = NO;
-    }
 }
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.pageView.isTopImageHidden = NO;
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+
+    if (!scrollView.dragging && !scrollView.decelerating) {
+        self.pageView.isTopImageHidden = NO;
+    }
 }
 
 #pragma mark CRMPageNumberViewDelegate
