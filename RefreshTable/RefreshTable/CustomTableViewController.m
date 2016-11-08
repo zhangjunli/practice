@@ -47,6 +47,9 @@
 
     [self.tableView setContentOffset:CGPointZero];
     self.tableView.rowHeight = 100;
+
+    //注册程序进入前台通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (willEnterForeground:) name: UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (CRMPageNumberView *)pageView {
@@ -95,6 +98,7 @@
 }
 
 #pragma mark 上拉加载事件
+
 - (void)loadAction {
     [self performSelector:@selector(loadDelayAction) withObject:nil afterDelay:2.0];
 }
@@ -146,6 +150,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //修改页码为向上的箭头
+    self.pageView.isTopImageHidden = NO;
+}
+
 #pragma mark - UIScrollViewDelegate
 
 //观察到，第一次加载时，contentOffset位移自动向下移动了一段，显示出了“上拉刷新”文字。写下面两个方法，是避免出现时，位移下移
@@ -193,6 +203,13 @@
     if (!scrollView.dragging && !scrollView.decelerating) {
         self.pageView.isTopImageHidden = NO;
     }
+}
+
+#pragma mark 通知绑定方法
+
+- (void)willEnterForeground:(NSNotification *)notification {
+
+    self.pageView.isTopImageHidden = NO;
 }
 
 #pragma mark CRMPageNumberViewDelegate
